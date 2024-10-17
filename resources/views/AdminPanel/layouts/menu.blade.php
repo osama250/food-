@@ -26,6 +26,142 @@
                     <!--begin:Menu sub-->
                     <div class="menu-sub menu-sub-accordion">
 
+                                 <!--begin:Menu link-->
+                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion special rounded w-100">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link ">
+                                        <span class="menu-icon">
+                                            <i class="ki-duotone ki-element-plus fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                                <span class="path4"></span>
+                                                <span class="path5"></span>
+                                            </i>
+                                        </span>
+                                        <span class="menu-title">{{ __('lang.users') }}</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div class="menu-sub menu-sub-accordion" kt-hidden-height="375" style="display: none; overflow: hidden;">
+                                            @if ( auth()->user()->can('View Admins') )
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link active" href="{{ route('admins.index') }}">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">{{ __('lang.admin') }}</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                            @endif
+                                            @if (auth()->user()->can('View Roles'))
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link active" href="{{ route('role.index') }}">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">{{ __('lang.role') }}</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                            @endif
+                                            <!--end:Menu item-->
+                                            <!--begin:Menu item-->
+                                            @if (auth()->user()->hasRole('superadmin'))
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link active" href="{{ route('permessions.index') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('lang.permession') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            @endif
+                                            @if (auth()->user()->can('View User'))
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link active" href="{{ route('users.index') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('lang.users') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            @endif
+
+                                            @if (auth()->user()->can('View Subscriber'))
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link active" href="{{ route('subscribers.index') }}">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('lang.subscribers') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            @endif
+
+                                            @if (auth()->user()->can('View Age'))
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                {{-- <a class="menu-link active" href="{{ route('ages.index') }}"> --}}
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">{{ __('lang.ages') }}</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            @endif
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu link-->
+                                 <!--begin:Menu link-->
+                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion special rounded w-100">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link ">
+                                        <span class="menu-icon">
+                                            <i class="ki-duotone ki-element-plus fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                                <span class="path4"></span>
+                                                <span class="path5"></span>
+                                            </i>
+                                        </span>
+                                        <span class="menu-title">{{ __('lang.departs') }}</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div class="menu-sub menu-sub-accordion" kt-hidden-height="375" style="display: none; overflow: hidden;">
+                                            @if ( auth()->user()->can('View Category') )
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link active" href="{{ route('categories.index') }}">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">{{ __('lang.categories') }}</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                            @endif
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu link-->
                             <!--begin:Menu link-->
                             <div data-kt-menu-trigger="click" class="menu-item menu-accordion special rounded w-100">
                                 <!--begin:Menu link-->
@@ -201,106 +337,7 @@
                                 <!--end:Menu sub-->
                             </div>
                             <!--end:Menu link-->
-                            <!--begin:Menu link-->
-                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion special rounded w-100">
-                                <!--begin:Menu link-->
-                                <span class="menu-link ">
-                                    <span class="menu-icon">
-                                        <i class="ki-duotone ki-element-plus fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                            <span class="path5"></span>
-                                        </i>
-                                    </span>
-                                    <span class="menu-title">{{ __('lang.users') }}</span>
-                                    <span class="menu-arrow"></span>
-                                </span>
-                                <!--end:Menu link-->
-                                <!--begin:Menu sub-->
-                                <div class="menu-sub menu-sub-accordion" kt-hidden-height="375" style="display: none; overflow: hidden;">
-                                        @if ( auth()->user()->can('View Admins') )
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link active" href="{{ route('admins.index') }}">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                                    <span class="menu-title">{{ __('lang.admin') }}</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                        @endif
-                                        @if (auth()->user()->can('View Roles'))
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link active" href="{{ route('role.index') }}">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                                    <span class="menu-title">{{ __('lang.role') }}</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                        @endif
-                                        <!--end:Menu item-->
-                                        <!--begin:Menu item-->
-                                        @if (auth()->user()->hasRole('superadmin'))
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link active" href="{{ route('permessions.index') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('lang.permession') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        @endif
-                                        @if (auth()->user()->can('View User'))
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link active" href="{{ route('users.index') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('lang.users') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        @endif
 
-                                        @if (auth()->user()->can('View Subscriber'))
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link active" href="{{ route('subscribers.index') }}">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('lang.subscribers') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        @endif
-
-                                        @if (auth()->user()->can('View Age'))
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            {{-- <a class="menu-link active" href="{{ route('ages.index') }}"> --}}
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">{{ __('lang.ages') }}</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        @endif
-                                </div>
-                                <!--end:Menu sub-->
-                            </div>
-                            <!--end:Menu link-->
 
                             <!--begin:Menu link-->
                             <div data-kt-menu-trigger="click" class="menu-item menu-accordion special rounded w-100">

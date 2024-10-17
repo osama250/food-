@@ -139,4 +139,6 @@ return [
     'choose'     => 'Choose-Us' ,
     'dining'     => 'Dining' ,
     'accommodation'  => 'Accommodations',
+    'categories'    => 'Categories',
+    'category'      => 'Category',
 ];

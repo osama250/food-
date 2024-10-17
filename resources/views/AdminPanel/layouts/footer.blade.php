@@ -2,7 +2,7 @@
     <!--begin::Copyright-->
     <div class="text-dark order-2 order-md-1">
         <span class="text-muted fw-semibold me-1">{{Date('Y')}}&copy;</span>
-        <a  class="text-gray-800 text-hover-primary">TechVillage</a>
+        <a  class="text-gray-800 text-hover-primary">Mohammed Ahmed</a>
     </div>
     <!--end::Copyright-->
     <!--begin::Menu-->

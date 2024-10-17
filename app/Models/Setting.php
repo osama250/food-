@@ -36,11 +36,11 @@ class Setting extends Model
         foreach ($langs as $lang) {
             $rules[$lang . '.footer_description'] = 'required|string|min:5';
         }
-        $rules['app_name'] = 'required|string';
-        $rules['logo'] = 'sometimes|image|mimes:jpg,jpeg,png';
-        $rules['footer_logo'] = 'sometimes|image|mimes:jpg,jpeg,png';
-        $rules['location'] = 'required|url';
-        $rules['points_price'] = 'required|numeric|not_in:0|min:1';
+        $rules['app_name']      = 'required|string';
+        $rules['logo']          = 'sometimes|image|mimes:jpg,jpeg,png';
+        $rules['footer_logo']   = 'sometimes|image|mimes:jpg,jpeg,png';
+        $rules['location']      = 'required|string';
+        $rules['points_price']  = 'required|numeric|not_in:0|min:1';
         return $rules;
     }
 

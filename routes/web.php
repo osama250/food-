@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminPanel\AuthController;
 use App\Http\Controllers\AdminPanel\PermessionController;
 use App\Http\Controllers\AdminPanel\RoleController;
 use App\Http\Controllers\AdminPanel\SettingController;
+use App\Http\Controllers\AdminPanel\CategoryController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -31,6 +33,8 @@ Route::group(
             Route::resource('role', RoleController::class);
             Route::resource('permessions', PermessionController::class);
             Route::resource('settings', SettingController::class);
+            Route::resource('categories', CategoryController::class);
+
 
         });
     }

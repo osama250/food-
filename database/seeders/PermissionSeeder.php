@@ -22,10 +22,10 @@ class PermissionSeeder extends Seeder
             'Update Roles',
             'Delete Roles',
             'Edit Setting',
-            'View Client',
-            'Create Client',
-            'Update Client',
-            'Delete Client',
+            'View Category',
+            'Create Category',
+            'Update Category',
+            'Delete Category',
         ];
         foreach ($permissions as $permission) {
             \Spatie\Permission\Models\Permission::updateOrCreate( [ 'name' => $permission ] );
