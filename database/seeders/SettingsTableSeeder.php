@@ -12,7 +12,7 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         DB::table('settings')->insert([
-            'app_name'      => 'Shams Academy',
+            'app_name'      => 'Food',
             'logo'          => 'path/to/logo.png',
             'footer_logo'   => 'public/logo.png',
             'location'      => 'Cairo, Egypt',
