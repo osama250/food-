@@ -7,7 +7,8 @@ use App\Http\Controllers\AdminPanel\PermessionController;
 use App\Http\Controllers\AdminPanel\RoleController;
 use App\Http\Controllers\AdminPanel\SettingController;
 use App\Http\Controllers\AdminPanel\CategoryController;
-use App\Models\Category;
+use App\Http\Controllers\AdminPanel\RiceController;
+use App\Http\Controllers\AdminPanel\BreadController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -34,7 +35,8 @@ Route::group(
             Route::resource('permessions', PermessionController::class);
             Route::resource('settings', SettingController::class);
             Route::resource('categories', CategoryController::class);
-
+            Route::resource('rice', RiceController::class);
+            Route::resource('breads', BreadController::class);
 
         });
     }

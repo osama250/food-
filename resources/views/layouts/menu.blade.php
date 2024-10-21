@@ -208,3 +208,17 @@
         <p>Categories</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('rice.index') }}" class="nav-link {{ Request::is('rice*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Rice</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('breads.index') }}" class="nav-link {{ Request::is('breads*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Breads</p>
+    </a>
+</li>
