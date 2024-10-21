@@ -141,4 +141,7 @@ return [
     'accommodation'  => 'Accommodations',
     'categories'    => 'Categories',
     'category'      => 'Category',
+    'rice'     => 'Rice',
+    'rices'    => 'Rices',
+    'bread'    => 'Bread',
 ];

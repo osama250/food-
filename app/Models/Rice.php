@@ -7,26 +7,25 @@ use App\Http\Traits\FileUpload;
 use Astrotomic\Translatable\Translatable;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class Category extends Model
+class Rice extends Model
 {
     use Translatable, FileUpload;
-    public $table                   = 'categories';
-    public $fillable                = ['image' , 'title' , 'description'];
-    public $translatedAttributes    = ['title' , 'description'];
-
+    public $table                   = 'rices';
+    public $fillable                = [ 'image' , 'name' ];
+    public $translatedAttributes    = [ 'name' ];
 
     protected $casts = [
-        'id'    => 'integer',
-        'image' => 'string'
+        'id'        => 'integer',
+        'image'     => 'string'
     ];
 
-    public static function rules() {
+    public static function rules()
+    {
         $langs = LaravelLocalization::getSupportedLanguagesKeys();
         foreach ($langs as $lang) {
-            $rules[$lang . '.title']            = 'required|string|min:5';
-            $rules[$lang . '.description']      = 'required|string|min:5';
+            $rules[$lang . '.name']    = 'required|string|min:5';
         }
-        $rules['image'] = 'required|image|mimes:jpg,jpeg,png';
+        $rules['image']                = 'required|image|mimes:jpg,jpeg,png';
         return $rules;
     }
 
@@ -36,13 +35,13 @@ class Category extends Model
             $this->attributes['image'] = $image;
         } else {
             $fileName = time() . '.' . $image->getClientOriginalExtension();
-            $this->attributes['image'] = $this->uploadImage($image, $fileName, 'uploads/categories/');
+            $this->attributes['image'] = $this->uploadImage($image, $fileName, 'uploads/rices/');
         }
     }
 
     public function getImageAttribute()
     {
-        return  isset($this->attributes['image']) ? asset('uploads/categories/' .
+        return  isset($this->attributes['image']) ? asset('uploads/rices/' .
         $this->attributes['image']) : NULL;
     }
 
