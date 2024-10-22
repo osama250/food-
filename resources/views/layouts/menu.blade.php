@@ -222,3 +222,10 @@
         <p>Breads</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('drinks.index') }}" class="nav-link {{ Request::is('drinks*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Drinks</p>
+    </a>
+</li>

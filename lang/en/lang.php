@@ -144,4 +144,6 @@ return [
     'rice'     => 'Rice',
     'rices'    => 'Rices',
     'bread'    => 'Bread',
+    'drinks'   => 'Drinks',
+    'drink'    => 'Drink',
 ];

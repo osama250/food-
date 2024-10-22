@@ -34,6 +34,10 @@ class PermissionSeeder extends Seeder
             'Create Bread',
             'Update Bread',
             'Delete Bread',
+            'View Drink',
+            'Create Drink',
+            'Update Drink',
+            'Delete Drink',
         ];
         foreach ($permissions as $permission) {
             \Spatie\Permission\Models\Permission::updateOrCreate( [ 'name' => $permission ] );

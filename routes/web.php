@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminPanel\SettingController;
 use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\AdminPanel\RiceController;
 use App\Http\Controllers\AdminPanel\BreadController;
+use App\Http\Controllers\AdminPanel\DrinkController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -37,7 +38,7 @@ Route::group(
             Route::resource('categories', CategoryController::class);
             Route::resource('rice', RiceController::class);
             Route::resource('breads', BreadController::class);
-
+            Route::resource('drinks', DrinkController::class);
         });
     }
 );
@@ -56,4 +57,5 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
 
