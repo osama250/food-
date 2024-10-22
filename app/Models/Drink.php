@@ -7,16 +7,16 @@ use App\Http\Traits\FileUpload;
 use Astrotomic\Translatable\Translatable;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class Bread extends Model
+class Drink extends Model
 {
     use Translatable, FileUpload;
-    public $table                   = 'breads';
+    public $table                   = 'drinks';
     public $fillable                = [ 'image' , 'name' ];
     public $translatedAttributes    = [ 'name' ];
 
     protected $casts = [
-        'id'        => 'integer',
-        'image'     => 'string'
+        'id'    => 'integer',
+        'image' => 'string'
     ];
 
     public static function rules()
@@ -35,15 +35,14 @@ class Bread extends Model
             $this->attributes['image'] = $image;
         } else {
             $fileName = time() . '.' . $image->getClientOriginalExtension();
-            $this->attributes['image'] = $this->uploadImage($image, $fileName, 'uploads/breads/');
+            $this->attributes['image'] = $this->uploadImage($image, $fileName, 'uploads/drinks/');
         }
     }
 
     public function getImageAttribute()
     {
-        return  isset($this->attributes['image']) ? asset('uploads/breads/' .
+        return  isset($this->attributes['image']) ? asset('uploads/drinks/' .
         $this->attributes['image']) : NULL;
     }
-
 
 }
